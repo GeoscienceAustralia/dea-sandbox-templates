@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{page_config['appName'] | e}}</title>
+  <title>{{ html_title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {# Copy so we do not modify the page_config with updates. #}
 {% set page_config_full = page_config.copy() %}
