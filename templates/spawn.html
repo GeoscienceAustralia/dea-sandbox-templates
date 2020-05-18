@@ -56,11 +56,14 @@
     }
 </style>
 <script>
-$('.form-control.input-group:first').addClass('selected-option');
-$('.form-control.input-group').click(function(){
-    $('.form-control.input-group').removeClass('selected-option')
-    $(this).addClass('selected-option');
-});
+  $(document).ready(function(){
+        $('.form-control.input-group:first').addClass('selected-option');
+        $('.form-control.input-group').click(function(){
+            $('.form-control.input-group').removeClass('selected-option')
+            $(this).addClass('selected-option');
+        });
+  });
+
 </script>
 {% endblock %}
 
