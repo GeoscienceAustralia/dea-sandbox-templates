@@ -1,58 +1,11 @@
 {% extends "templates/spawn.html" %}
 {% block meta %}
+{{ super() }}
 <style>
     .form-control.input-group:hover, .selected-option{
       background: rgba(0, 161, 222, 0.8);
       color: #fff;
       cursor: pointer;
-    }
-
-    .feedback-button-wrapper {
-        position: absolute;
-        z-index: 0;
-        bottom: 100px;
-        right: 30px;
-        margin: 0;
-    }
-
-    .feedback-div {
-        background: #fff;
-        font-family: "Open Sans", sans-serif;
-        font-size: .9rem;
-        color: #3f4854;
-        border-radius: 20px;
-        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
-    }
-
-    .feedback-button {
-        background-color: transparent;
-        margin: 0;
-        border: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-weight: 400;
-        box-shadow: none;
-        text-align: left;
-        cursor: pointer;
-        line-height: 20px;
-        text-decoration: none;
-        font-size: .85rem;
-        font-family: "Open Sans", sans-serif;
-        padding: 5px 15px 5px 5px;
-    }
-
-    .feedback-button svg {
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        vertical-align: bottom;
-        fill: #00a1de;
-    }
-
-    .feedback-button span {
-        vertical-align: top;
-        line-height: 2.2;
-        font-size: 14px;
     }
 </style>
 <script>
