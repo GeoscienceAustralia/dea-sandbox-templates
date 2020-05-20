@@ -8,10 +8,19 @@
         position: absolute;
         z-index: 0;
         bottom: 100px;
-        right: 20px;
+        right: 30px;
         margin: 0;
     }
-
+    .btn-primary, .btn-jupyter {
+        background-color: #00A1DE !important;
+        border-color: #2e6da4 !important;
+    }
+    .btn-primary:hover, .btn-jupyter:hover {
+        background-color: #3a7ca8 !important;
+    }
+    .progress-bar {
+        background-color: #00A1DE !important;
+    }
     .feedback-div {
         background: #fff;
         font-family: "Open Sans", sans-serif;
@@ -35,7 +44,7 @@
         text-decoration: none;
         font-size: .85rem;
         font-family: "Open Sans", sans-serif;
-        padding: 5px;
+        padding: 5px 15px 5px 5px;
     }
 
     .feedback-button svg {
@@ -43,6 +52,7 @@
         height: 30px;
         display: inline-block;
         vertical-align: bottom;
+        fill: #00a1de;
     }
 
     .feedback-button span {
@@ -50,11 +60,19 @@
         line-height: 2.2;
         font-size: 14px;
     }
+    .page-logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        margin-bottom: 50px;
+    }
 </style>
 {% endblock %}
 
 {% block announcement %}
 {{ super() }}
+<img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
 <div class="feedback-button-wrapper">
     <div class="feedback-div">
         <button type="button" class="feedback-button" onclick="window.open('https://github.com/GeoscienceAustralia/dea-sandbox/issues')">
@@ -68,6 +86,5 @@
             </svg>
             <span>Give Feedback</span>
     </div>
-</div>
 </div>
 {% endblock %}

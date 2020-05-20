@@ -1,0 +1,27 @@
+{% extends "templates/spawn.html" %}
+{% block meta %}
+{{ super() }}
+<style>
+    .form-control.input-group:hover, .selected-option{
+      background: rgba(0, 161, 222, 0.8);
+      color: #fff;
+      cursor: pointer;
+    }
+</style>
+<script>
+  $(document).ready(function(){
+        $('.form-control.input-group:first').addClass('selected-option');
+        $('.form-control.input-group').click(function(){
+            $('.form-control.input-group').removeClass('selected-option')
+            $(this).addClass('selected-option');
+        });
+  });
+
+</script>
+{% endblock %}
+
+  {% block heading %}
+  <div class="row text-center">
+    <h1 style="color: #00a1de;">Server Options</h1>
+  </div>
+  {% endblock %}
