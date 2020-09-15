@@ -19,14 +19,33 @@
   <link rel="" type="image/x-icon" href="{{ base_url | escape }}static/base/images/favicon-busy-1.ico" class="busy favicon">
   {% endblock %}
 <style>
+    @keyframes expand {
+      0% {width: 40px;}
+      100%   {width: 160px;}
+    }
+    @keyframes shrink {
+      100% {width: 40px;}
+      0%   {width: 160px;}
+    }
     .feedback-button-wrapper {
         position: absolute;
         z-index: 99;
         bottom: 100px;
         right: 30px;
         margin: 0;
+        overflow: hidden;
+        height: 45px;
+        animation-delay: 1s;
+        animation-name: shrink;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
     }
-
+    .feedback-button-wrapper:hover {
+        animation-name: expand;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
     .feedback-div {
         background: #fff;
         font-family: "Open Sans", sans-serif;
