@@ -27,5 +27,11 @@
     Oh no! Something is wrong on our end. If this problem persists, please join our <a href="https://opendatacube.slack.com">#opendatacube slack channel</a> or
     <a href="earth.observations@ga.gov.au">email us</a>.
 </p>
+{% elif status_code == 503 %}
+{{ super() }}
+<p>
+    Pods reached limit, please join our <a href="https://opendatacube.slack.com">#opendatacube slack channel</a> or
+    <a href="earth.observations@ga.gov.au">email us</a>.
+</p>
 {% endif %}
 {% endblock error_detail %}
