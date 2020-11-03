@@ -19,20 +19,34 @@
   <link rel="" type="image/x-icon" href="{{ base_url | escape }}static/base/images/favicon-busy-1.ico" class="busy favicon">
   {% endblock %}
 <style>
+    @keyframes expand {
+      0% {width: 40px;}
+      100%   {width: 160px;}
+    }
+    @keyframes shrink {
+      100% {width: 40px;}
+      0%   {width: 160px;}
+    }
     .feedback-button-wrapper {
         position: absolute;
         z-index: 99;
-        bottom: 100px;
-        right: 30px;
+        bottom: 50px;
+        right: 8px;
         margin: 0;
+        overflow: hidden;
+        height: 45px;
+        width: 160px;
+        animation-delay: 2.5s;
+        animation-name: shrink;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        border-radius: 22.75px;
     }
-
     .feedback-div {
         background: #fff;
         font-family: "Open Sans", sans-serif;
         font-size: .9rem;
         color: #3f4854;
-        border-radius: 20px;
         box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
     }
 
@@ -69,7 +83,7 @@
 </style>
 </head>
 <body>
-<div class="feedback-button-wrapper">
+<div class="feedback-button-wrapper" id="feedback-button-wrapper">
     <div class="feedback-div">
         <button type="button" class="feedback-button" onclick="window.open('https://github.com/GeoscienceAustralia/dea-sandbox/issues')">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
@@ -109,6 +123,27 @@
 
     window.history.replaceState({ }, '', url);
   })();
+
+
+  // add animation on button click
+  let timeOut;
+  var btnwrapper = document.getElementById("feedback-button-wrapper");
+  btnwrapper.addEventListener('mouseover', function(event){
+    timeOut = setTimeout(function(){
+      btnwrapper.style.animationName = "expand";
+      btnwrapper.style.animationDuration = "0.3s";
+      btnwrapper.style.animationIterationCount = 1;
+      btnwrapper.style.animationFillMode = "forwards";
+      btnwrapper.style.animationDelay = "0.1s";
+      btnwrapper.style.width = "40px";
+      }, 2000);
+  });
+
+  btnwrapper.addEventListener('mouseleave', function(event){
+      clearTimeout(timeOut);
+
+      btnwrapper.removeAttribute("style");
+  });
 </script>
 
 <script type="text/javascript" src="{{page_config.fullStaticUrl}}/main.js"></script>
