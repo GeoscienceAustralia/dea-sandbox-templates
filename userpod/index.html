@@ -42,14 +42,14 @@
         animation-fill-mode: forwards;
         border-radius: 22.75px;
     }
-    .feedback-button-wrapper:hover {
+    /* .feedback-button-wrapper:hover {
         animation-name: expand;
         animation-duration: 0.3s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
         animation-delay: 0.1s; /*override base delay*/
-        width: 40px; /*base width*/
-    }
+        /* /* width: 40px; base width */
+    /* } */
     .feedback-div {
         background: #fff;
         font-family: "Open Sans", sans-serif;
@@ -91,7 +91,7 @@
 </style>
 </head>
 <body>
-<div class="feedback-button-wrapper">
+<div class="feedback-button-wrapper" id="feedback-button-wrapper">
     <div class="feedback-div">
         <button type="button" class="feedback-button" onclick="window.open('https://github.com/GeoscienceAustralia/dea-sandbox/issues')">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
@@ -131,6 +131,16 @@
 
     window.history.replaceState({ }, '', url);
   })();
+
+  // add animation on button click
+  document.getElementById("feedback-button-wrapper").addEventListener('click', function(event){
+      this.style.animationName = "expand";
+      this.style.animationDuration = "0.3s";
+      this.style.animationIterationCount = 1;
+      this.style.animationFillMode = "forwards";
+      this.style.animationDelay = "0.1s";
+      this.style.width = "40px";
+  });
 </script>
 
 <script type="text/javascript" src="{{page_config.fullStaticUrl}}/main.js"></script>
