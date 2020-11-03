@@ -145,8 +145,12 @@
       btnwrapper.style.animationDelay = "0.1s";
       btnwrapper.style.width = "40px";
       }, 2000);
+  });
 
-
+  btnwrapper.addEventListener('mouseout', function(event){
+    timeOut = setTimeout(function(){
+      btnwrapper.removeAttribute("style");
+    }, 200);
   });
 </script>
 
