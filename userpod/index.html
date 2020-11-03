@@ -148,6 +148,8 @@
   });
 
   btnwrapper.addEventListener('mouseleave', function(event){
+      clearTimeout(timeOut);
+
       btnwrapper.removeAttribute("style");
   });
 </script>
