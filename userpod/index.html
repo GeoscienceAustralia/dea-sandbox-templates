@@ -132,14 +132,20 @@
     window.history.replaceState({ }, '', url);
   })();
 
+
   // add animation on button click
-  document.getElementById("feedback-button-wrapper").addEventListener('click', function(event){
-      this.style.animationName = "expand";
-      this.style.animationDuration = "0.3s";
-      this.style.animationIterationCount = 1;
-      this.style.animationFillMode = "forwards";
-      this.style.animationDelay = "0.1s";
-      this.style.width = "40px";
+  let timeOut;
+  document.getElementById("feedback-button-wrapper").addEventListener('mouseover', function(event){
+    timeOut = setTimeout(function(){
+        this.style.animationName = "expand";
+        this.style.animationDuration = "0.3s";
+        this.style.animationIterationCount = 1;
+        this.style.animationFillMode = "forwards";
+        this.style.animationDelay = "0.1s";
+        this.style.width = "40px";
+      }, 2000);
+
+
   });
 </script>
 
