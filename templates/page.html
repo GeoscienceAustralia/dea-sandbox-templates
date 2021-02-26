@@ -2,6 +2,10 @@
 
 {% block title %}{{ html_title }}{% endblock %}
 
+{% block favicon %}
+<link rel="icon" href="https://github.com/GeoscienceAustralia/dea-sandbox-templates/blob/master/branding/favicon/{{ favicon_file }}" type="image/x-icon">
+{% endblock %}
+
 {% block meta %}
 <style>
     .feedback-button-wrapper {
