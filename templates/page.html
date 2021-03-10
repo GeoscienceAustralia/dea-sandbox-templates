@@ -53,46 +53,46 @@
         margin-bottom: 50px;
     }
 </style>
-{% if color_theme == 'deafrica' %}
-<style>
-    .btn-primary, .btn-jupyter {
-        background-color: #00A1DE !important;
-        border-color: #2e6da4 !important;
-    }
-    .btn-primary:hover, .btn-jupyter:hover {
-        background-color: #3a7ca8 !important;
-    }
-    .progress-bar {
-        background-color: #00A1DE !important;
-    }
-    .feedback-button svg {
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        vertical-align: bottom;
-        fill: #00a1de;
-    }
-</style>
+{% if color_theme|string() == 'deafrica' %}
+    <style>
+        .btn-primary, .btn-jupyter {
+            background-color: #336699 !important;
+            border-color: #2e6da4 !important;
+        }
+        .btn-primary:hover, .btn-jupyter:hover {
+            background-color: #3a7ca8 !important;
+        }
+        .progress-bar {
+            background-color: #336699 !important;
+        }
+        .feedback-button svg {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            vertical-align: bottom;
+            fill: #336699;
+        }
+    </style>
 {% else %}
-<style>
-    .btn-primary, .btn-jupyter {
-        background-color: #336699 !important;
-        border-color: #2e6da4 !important;
-    }
-    .btn-primary:hover, .btn-jupyter:hover {
-        background-color: #3a7ca8 !important;
-    }
-    .progress-bar {
-        background-color: #336699 !important;
-    }
-    .feedback-button svg {
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        vertical-align: bottom;
-        fill: #336699;
-    }
-</style>
+    <style>
+        .btn-primary, .btn-jupyter {
+            background-color: #00A1DE !important;
+            border-color: #2e6da4 !important;
+        }
+        .btn-primary:hover, .btn-jupyter:hover {
+            background-color: #3a7ca8 !important;
+        }
+        .progress-bar {
+            background-color: #00A1DE !important;
+        }
+        .feedback-button svg {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            vertical-align: bottom;
+            fill: #00a1de;
+        }
+    </style>
 {% endif %}
 {% endblock %}
 

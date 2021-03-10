@@ -13,7 +13,7 @@
 {{ custom_html | safe }}
 {% elif login_service %}
 <div class="service-login">
-  {% if color_theme == 'deafrica' %}
+  {% if color_theme|string()  == 'deafrica' %}
   <h4 style="color: #336699;font-weight: 600;">{{ html_title }}</h4>
   {% else %}
   <h4 style="color: #00A1DE;font-weight: 600;">{{ html_title }}</h4>

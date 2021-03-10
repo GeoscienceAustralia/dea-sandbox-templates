@@ -2,7 +2,7 @@
 {% block meta %}
 {{ super() }}
 
-    {% if color_theme == 'deafrica' %}
+    {% if color_theme|string()  == 'deafrica' %}
     <style>
         .form-control.input-group:hover, .selected-option{
             background: rgba(51, 102, 153, 0.8);
@@ -35,7 +35,7 @@
   {% block heading %}
   <div class="row text-center">
 
-    {% if color_theme == 'deafrica' %}
+    {% if color_theme|string()  == 'deafrica' %}
     <h1 style="color: #336699;">Server Options</h1>
     {% else %}
     <h1 style="color: #00a1de;">Server Options</h1>
