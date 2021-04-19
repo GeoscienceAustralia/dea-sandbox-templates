@@ -110,4 +110,15 @@
             <span>Give Feedback</span>
     </div>
 </div>
+
+{% if announcement_pdf %}
+<div class="container">
+    <button class="btn btn-jupyter" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      View announcement pdf
+    </button>
+  <div class="collapse" id="collapseExample">
+    <embed src="{{ announcement_pdf }}" width="100%" height="800px" />
+  </div>
+</div>
+{% endif %}
 {% endblock %}
