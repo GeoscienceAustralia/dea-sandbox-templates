@@ -98,7 +98,7 @@
 <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
 <div class="feedback-button-wrapper">
     <div class="feedback-div">
-        <button type="button" class="feedback-button" onclick="window.open('https://github.com/GeoscienceAustralia/dea-sandbox/issues')">
+        <button type="button" class="feedback-button" onclick="window.open('{{ feedback_endpoint }}')">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
                 id="feedback">
                 <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
@@ -110,4 +110,15 @@
             <span>Give Feedback</span>
     </div>
 </div>
+
+{% if announcement_pdf %}
+<div class="container">
+    <button class="btn btn-jupyter" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      View announcement pdf
+    </button>
+  <div class="collapse" id="collapseExample">
+    <embed src="{{ announcement_pdf }}" width="100%" height="800px" />
+  </div>
+</div>
+{% endif %}
 {% endblock %}
