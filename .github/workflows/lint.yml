@@ -26,5 +26,5 @@ jobs:
           python -m pip install jinjalint
       - name: Lint with Jinjalint
         run: |
-          jinjalinter templates/
-          jinjalinter userpod/
+          jinjalint templates/
+          jinjalint userpod/
