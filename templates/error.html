@@ -1,16 +1,13 @@
 {% extends "templates/error.html" %}
-
-
 {% block h1_error %}
 {{ super() }}
-
 {% endblock h1_error %}
-
 {% block error_detail %}
 {% if status_code == 403 %}
 {{ super() }}
 <p>
-    <strong>It looks like you need to request an account!</strong> If you are a first time user, you can Sign Up from <a href="https://{{ domain_name }}/hub/login">the login page</a>.
+    <strong>It looks like you need to request an account!</strong> If you are a first time user, you can Sign Up from <a
+        href="https://{{ domain_name }}/hub/login">the login page</a>.
 </p>
 {% elif status_code == 401 %}
 <p>
@@ -24,7 +21,8 @@
 {% elif status_code == 500 %}
 {{ super() }}
 <p>
-    Oh no! Something is wrong on our end. If this problem persists, please join our <a href="https://opendatacube.slack.com">#opendatacube slack channel</a> or
+    Oh no! Something is wrong on our end. If this problem persists, please join our <a
+        href="https://opendatacube.slack.com">#opendatacube slack channel</a> or
     <a href="earth.observations@ga.gov.au">email us</a>.
 </p>
 {% elif status_code == 503 %}
