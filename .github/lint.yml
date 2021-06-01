@@ -13,7 +13,7 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    name: Analyze image efficiency
+    name: lint templates
     steps:
       - name: Checkout
         uses: actions/checkout@v2
