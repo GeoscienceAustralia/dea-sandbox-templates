@@ -17,12 +17,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup nginx
-        uses: cuchi/jinja2-action@v1.2.0
+      - name: setup python 3.8
+        uses: actions/setup-python@v2
         with:
-          template: templates/error.html
-          output_file: templates/error.html
-          strict: true
-          variables: |
-            server_host=staging.example.com
-            timeout=30s
+          python-version: 3.8
+      - name: Install jinjalint
+        run: |
+          python -m pip install jinjalint
+      - name: Lint with Jinjalint
+        run: |
+          jinjalinter templates/
+          jinjalinter userpod/
