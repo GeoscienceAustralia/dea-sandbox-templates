@@ -1,44 +1,42 @@
 {% extends "templates/spawn.html" %}
 {% block meta %}
 {{ super() }}
-
-    {% if color_theme|string()  == 'deafrica' %}
-    <style>
-        .form-control.input-group:hover, .selected-option{
-            background: rgba(51, 102, 153, 0.8);
-            color: #fff;
-            cursor: pointer;
-        }
-    </style>
-    {% else %}
-    <style>
-        .form-control.input-group:hover, .selected-option{
-            background: rgba(0, 161, 222, 0.8);
-            color: #fff;
-            cursor: pointer;
-        }
-    </style>
-    {% endif %}
-
+{% if color_theme|string() == 'deafrica' %}
+<style>
+    .form-control.input-group:hover,
+    .selected-option {
+        background: rgba(51, 102, 153, 0.8);
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+{% else %}
+<style>
+    .form-control.input-group:hover,
+    .selected-option {
+        background: rgba(0, 161, 222, 0.8);
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+{% endif %}
 <script>
-  $(document).ready(function(){
+    $(document).ready(function () {
         $('.form-control.input-group:first').addClass('selected-option');
-        $('.form-control.input-group').click(function(){
+        $('.form-control.input-group').click(function () {
             $('.form-control.input-group').removeClass('selected-option')
             $(this).addClass('selected-option');
         });
-  });
+    });
 
 </script>
 {% endblock %}
-
-  {% block heading %}
-  <div class="row text-center">
-
-    {% if color_theme|string()  == 'deafrica' %}
+{% block heading %}
+<div class="row text-center">
+    {% if color_theme|string() == 'deafrica' %}
     <h1 style="color: #336699;">Server Options</h1>
     {% else %}
     <h1 style="color: #00a1de;">Server Options</h1>
     {% endif %}
-  </div>
-  {% endblock %}
+</div>
+{% endblock %}

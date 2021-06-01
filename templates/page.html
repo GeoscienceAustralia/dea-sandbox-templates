@@ -1,11 +1,10 @@
 {% extends "templates/page.html" %}
-
 {% block title %}{{ html_title }}{% endblock %}
-
 {% block favicon %}
-<link rel="icon" href="https://github.com/GeoscienceAustralia/dea-sandbox-templates/blob/master/branding/favicon/{{ favicon_file }}" type="image/x-icon">
+<link rel="icon"
+    href="https://github.com/GeoscienceAustralia/dea-sandbox-templates/blob/master/branding/favicon/{{ favicon_file }}"
+    type="image/x-icon">
 {% endblock %}
-
 {% block meta %}
 <style>
     .feedback-button-wrapper {
@@ -15,6 +14,7 @@
         right: 30px;
         margin: 0;
     }
+
     .feedback-div {
         background: #fff;
         font-family: "Open Sans", sans-serif;
@@ -40,11 +40,13 @@
         font-family: "Open Sans", sans-serif;
         padding: 5px 15px 5px 5px;
     }
+
     .feedback-button span {
         vertical-align: top;
         line-height: 2.2;
         font-size: 14px;
     }
+
     .page-logo {
         display: block;
         margin-left: auto;
@@ -52,47 +54,54 @@
         width: 20%;
         margin-bottom: 50px;
     }
-    .btn-primary:hover, .btn-jupyter:hover {
+
+    .btn-primary:hover,
+    .btn-jupyter:hover {
         background-color: #3a7ca8 !important;
     }
 </style>
 {% if color_theme|string() == 'deafrica' %}
-    <style>
-        .btn-primary, .btn-jupyter {
-            background-color: #336699 !important;
-            border-color: #2e6da4 !important;
-        }
-        .progress-bar {
-            background-color: #336699 !important;
-        }
-        .feedback-button svg {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-            vertical-align: bottom;
-            fill: #336699;
-        }
-    </style>
+<style>
+    .btn-primary,
+    .btn-jupyter {
+        background-color: #336699 !important;
+        border-color: #2e6da4 !important;
+    }
+
+    .progress-bar {
+        background-color: #336699 !important;
+    }
+
+    .feedback-button svg {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: bottom;
+        fill: #336699;
+    }
+</style>
 {% else %}
-    <style>
-        .btn-primary, .btn-jupyter {
-            background-color: #00A1DE !important;
-            border-color: #2e6da4 !important;
-        }
-        .progress-bar {
-            background-color: #00A1DE !important;
-        }
-        .feedback-button svg {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-            vertical-align: bottom;
-            fill: #00a1de;
-        }
-    </style>
+<style>
+    .btn-primary,
+    .btn-jupyter {
+        background-color: #00A1DE !important;
+        border-color: #2e6da4 !important;
+    }
+
+    .progress-bar {
+        background-color: #00A1DE !important;
+    }
+
+    .feedback-button svg {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: bottom;
+        fill: #00a1de;
+    }
+</style>
 {% endif %}
 {% endblock %}
-
 {% block announcement %}
 {{ super() }}
 <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
@@ -108,17 +117,18 @@
                 </path>
             </svg>
             <span>Give Feedback</span>
+            </button>
     </div>
 </div>
-
 {% if announcement_pdf %}
 <div class="container">
-    <button class="btn btn-jupyter" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      View announcement pdf
+    <button class="btn btn-jupyter" type="button" data-toggle="collapse" data-target="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample">
+        View announcement pdf
     </button>
-  <div class="collapse" id="collapseExample">
-    <embed src="{{ announcement_pdf }}" width="100%" height="800px" />
-  </div>
+    <div class="collapse" id="collapseExample">
+        <embed src="{{ announcement_pdf }}" width="100%" height="800px" />
+    </div>
 </div>
 {% endif %}
 {% endblock %}
