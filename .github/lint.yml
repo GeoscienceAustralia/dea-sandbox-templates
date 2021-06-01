@@ -1,0 +1,28 @@
+---
+name: docker checker
+
+on:
+  pull_request:
+    branches:
+      - 'master'
+
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Analyze image efficiency
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup nginx
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: templates/error.html
+          output_file: templates/error.html
+          strict: true
+          # variables: |
+          #   server_host=staging.example.com
+          #   timeout=30s
