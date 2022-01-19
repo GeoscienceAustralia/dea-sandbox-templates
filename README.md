@@ -5,6 +5,25 @@ This repository contains templates used for JupyterHub.
 
 Note: By default, JupyterHub already has these files in `/usr/local/share/jupyterhub/templates`
 
+## Template Variables
+
+`templatevars` can be set https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/main/jupyterhub/values.yaml#L118
+
+The templates extends from all templates in https://github.com/jupyterhub/jupyterhub/tree/main/share/jupyterhub/templates
+
+Our templates supports the following template variables
+
+**templatevars**|**type**
+:-----|:-----
+color_theme|string
+html_title|string
+announcement_pdf|http url to a file
+feedback_endpoint|http url
+login_error|error message
+domain_name|full domain name without protocol like http:// or https:// for jupyterhub
+
+
+
 # Customised Errors
 The `custom/error.html` is extending https://github.com/jupyterhub/jupyterhub/blob/master/share/jupyterhub/templates/error.html
 
@@ -19,7 +38,7 @@ the Structure of the template is
 use `{{ super() }}` to inherit original message, or leave it out to completely override the `{% block %}`.
 
 ## 404
-### template code snippet 
+### template code snippet
 
 ### Sandbox error html render
 ```html
@@ -34,7 +53,7 @@ use `{{ super() }}` to inherit original message, or leave it out to completely o
 ## 403
 
 ## 401
-### template code snippet 
+### template code snippet
 ```python
 {% elif status_code == 401 %}
 <p>
