@@ -12,19 +12,29 @@
     </style>
     {% else %}
     <style>
-        .form-control.input-group:hover, .selected-option{
+        #kubespawner-profiles-list .profile:hover, .selected-option{
             background: rgba(0, 161, 222, 0.8);
             color: #fff;
             cursor: pointer;
+        }
+
+        #kubespawner-profiles-list .profile {
+            padding: 6px 12px !important;
+            border: 1px solid #ccc !important;
+        }
+
+        .radio input[type=radio] {
+            margin-top: -1px;
+            margin-left: -14px !important;
         }
     </style>
     {% endif %}
 
 <script>
   $(document).ready(function(){
-        $('.form-control.input-group:first').addClass('selected-option');
-        $('.form-control.input-group').click(function(){
-            $('.form-control.input-group').removeClass('selected-option')
+        $('#kubespawner-profiles-list .profile:first').addClass('selected-option');
+        $('#kubespawner-profiles-list .profile').click(function(){
+            $('#kubespawner-profiles-list .profile').removeClass('selected-option')
             $(this).addClass('selected-option');
         });
   });
