@@ -21,15 +21,16 @@
 {% elif status_code == 500 %}
 {{ super() }}
 <p>
-    Oh no! Something is wrong on our end. If this problem persists, please join our <a
-        href="https://opendatacube.slack.com">#opendatacube slack channel</a> or
+    Oh no! Something is wrong on our end. If this problem persists, please make a report on the
+    <a href="https://discord.com/invite/4hhBQVas5U">"digital-earth-australia" Discord channel</a> or
     <a href="earth.observations@ga.gov.au">email us</a>.
 </p>
 {% elif status_code == 503 %}
 {{ super() }}
 <p>
-    Pods reached limit, please join our <a href="https://opendatacube.slack.com">#opendatacube slack channel</a> or
-    <a href="earth.observations@ga.gov.au">email us</a>.
+    Pods reached limit. Please make a report on the
+    <a href="https://discord.com/invite/4hhBQVas5U">"digital-earth-australia" Discord channel</a>
+    or <a href="earth.observations@ga.gov.au">email us</a>.
 </p>
 {% endif %}
 {% endblock error_detail %}
